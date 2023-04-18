@@ -4,13 +4,13 @@ import { Routes, Route } from "react-router-dom";
 import SoftwareReview from "pages/SoftwareReview";
 import Products from "pages/Products";
 import AboutUs from "pages/AboutUs";
-import AppLayout from "pages/AppLayout";
-import { links } from "shared";
+import AppLayout from "pages/AppLayout/AppLayout";
 
+const links=['Software review','Products','About us']
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<AppLayout links={links} />}>
+      <Route path="/" element={<AppLayout links={links}/>}>
         <Route index element={<SoftwareReview />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/about-us" element={<AboutUs />}></Route>

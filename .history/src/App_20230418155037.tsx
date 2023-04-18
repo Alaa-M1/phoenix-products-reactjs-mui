@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import AppLayout from "components/AppLayout";
 import SoftwareReview from "pages/SoftwareReview";
 import Products from "pages/Products";
 import AboutUs from "pages/AboutUs";
-import AppLayout from "pages/AppLayout";
-import { links } from "shared";
+import NavBar from "components/NavBar";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<AppLayout links={links} />}>
+      <Route path="/" element={<NavBar />}>
         <Route index element={<SoftwareReview />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/about-us" element={<AboutUs />}></Route>
