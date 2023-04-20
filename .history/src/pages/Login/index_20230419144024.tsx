@@ -1,0 +1,47 @@
+import Box from "@mui/material/Box";
+import { useState } from "react";
+import { PhoenixTextField } from "shared";
+const Login = () => {
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    password: "",
+    email: "",
+  });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setUserInfo((p) => ({ ...p, [e.target.name]: e.target.value }));
+  };
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <PhoenixTextField
+        onChange={handleChange}
+        label="User name:"
+        value={userInfo.name}
+        name="name"
+      ></PhoenixTextField>
+      <PhoenixTextField
+        onChange={handleChange}
+        label="User email:"
+        value={userInfo.email}
+        name="email"
+      ></PhoenixTextField>
+      <PhoenixTextField
+        onChange={handleChange}
+        label="User password:"
+        value={userInfo.password}
+        name="[password]"
+        type="password"
+      ></PhoenixTextField>
+    </Box>
+  );
+};
+
+export default Login;
