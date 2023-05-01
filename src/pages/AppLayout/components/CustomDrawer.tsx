@@ -4,10 +4,6 @@ import {
   IconButton,
   Box,
   Typography,
-  Link as MUILink,
-  Button,
-  List,
-  ListItem,
   ListItemButton,
 } from "@mui/material";
 import { useState } from "react";
@@ -15,12 +11,10 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Link, useLocation } from "react-router-dom";
 import AppShortcutIcon from "@mui/icons-material/AppShortcut";
 import { StyledList } from "./StyledList";
-import { StyledLink } from "./StyledLink";
 import { LinkInfo } from "types";
 
 const CustomDrawer = ({ links, isSmallScreen }: CustomDrawerProps) => {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
   const drawerLinks: Array<LinkInfo> = [
     ...links,
     { path: "/login", label: "" },

@@ -20,7 +20,7 @@ import { linksDetails } from "shared";
 const AppLayout = ({ links }: AppLayoutProps) => {
   const { pathname } = useLocation();
   const theme = useTheme();
-  const isSmallScreen = false;
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <>
       <AppBar
@@ -29,6 +29,7 @@ const AppLayout = ({ links }: AppLayoutProps) => {
           backgroundImage:
             "linear-gradient(90deg,rgba(0, 212, 255, 1) 0%,rgba(9, 75, 121, 1) 50%,rgba(0, 212, 255, 1) 100%)",
           marginBottom: "5px",
+          height:{md:'60px', xs:'auto'}
         }}
       >
         <Toolbar>
